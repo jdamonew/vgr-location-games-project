@@ -1,0 +1,7 @@
+INDEX VERSION 1.4+C:\Users\DamoneW\Desktop\Sistema_vgr\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+287582910.index
+3627378660.index
+3577904008.index
+1841062572.index
+4030924385.index
+446628832.index

@@ -1,0 +1,132 @@
+package vgr.view;
+
+import java.awt.EventQueue;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.ImageIcon;
+import java.awt.Font;
+import javax.swing.JTextPane;
+import javax.swing.JButton;
+import java.awt.Color;
+import java.awt.SystemColor;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+public class viewGameRust extends JFrame {
+
+	
+	
+	public viewGameRust() {
+		setTitle("Rust The Survivel Game");
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 840, 540);
+		getContentPane().setLayout(null);
+		setLocationRelativeTo(null);
+		setUndecorated(false);
+		
+		JButton btnVolltar = new JButton("Voltar");
+		btnVolltar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				
+				viewCatalogo voltarCatalogo = new viewCatalogo("");
+				voltarCatalogo.setVisible(true);
+				dispose();
+			}
+		});
+		btnVolltar.setFont(new Font("Consolas", Font.PLAIN, 16));
+		btnVolltar.setBounds(12, 455, 97, 25);
+		getContentPane().add(btnVolltar);
+		
+		JLabel lblEconomize = new JLabel("Economize 50%");
+		lblEconomize.setFont(new Font("Tahoma", Font.ITALIC, 14));
+		lblEconomize.setBounds(663, 280, 113, 16);
+		getContentPane().add(lblEconomize);
+		
+		JLabel txtWarning1 = new JLabel("Indispon\u00EDvel em Portugu\u00EAs (Brasil)");
+		txtWarning1.setForeground(new Color(220, 20, 60));
+		txtWarning1.setFont(new Font("Consolas", Font.BOLD, 16));
+		txtWarning1.setBounds(426, 372, 332, 16);
+		getContentPane().add(txtWarning1);
+		
+		JTextPane txtWarning2 = new JTextPane();
+		txtWarning2.setEditable(false);
+		txtWarning2.setForeground(SystemColor.window);
+		txtWarning2.setOpaque(false);
+		txtWarning2.setFont(new Font("Consolas", Font.PLAIN, 14));
+		txtWarning2.setText("Este produto n\u00E3o est\u00E1 dispon\u00EDvel no seu idioma.");
+		txtWarning2.setBounds(426, 391, 320, 52);
+		getContentPane().add(txtWarning2);
+		
+		JButton btnAluguel = new JButton("Alugar");
+		btnAluguel.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				viewVenda vendaItem = new viewVenda();
+				vendaItem.setVisible(true);
+				dispose();
+			}
+		});
+		btnAluguel.setFont(new Font("Consolas", Font.BOLD, 18));
+		btnAluguel.setBounds(653, 227, 134, 40);
+		getContentPane().add(btnAluguel);
+		
+		JLabel lblPreco = new JLabel("R$ 30,00");
+		lblPreco.setFont(new Font("Consolas", Font.PLAIN, 23));
+		lblPreco.setBounds(497, 219, 113, 52);
+		getContentPane().add(lblPreco);
+		
+		
+		JLabel lblGenero = new JLabel("G\u00EAnero: Sobrevivencia,  Multijogador, Fabrica\u00E7\u00E3o");
+		lblGenero.setBounds(391, 80, 290, 16);
+		getContentPane().add(lblGenero);
+		
+		JLabel lblData = new JLabel("Data de Lan\u00E7amento: 08 de Fevereiro de 2018");
+		lblData.setBounds(390, 109, 285, 16);
+		getContentPane().add(lblData);
+		
+		
+		JLabel lblDesen = new JLabel("by Facepunch Studios");
+		lblDesen.setFont(new Font("Tahoma", Font.ITALIC, 16));
+		lblDesen.setBounds(28, 138, 187, 16);
+		getContentPane().add(lblDesen);
+		
+		JLabel lblNewLabel_1 = new JLabel("");
+		lblNewLabel_1.setIcon(new ImageIcon("C:\\Users\\DamoneW\\Desktop\\Projeto POO - J\u00F3bia Damone\\Anexos\\Capas_Games\\Rust_logo.png"));
+		lblNewLabel_1.setRequestFocusEnabled(false);
+		lblNewLabel_1.setBounds(12, 31, 384, 94);
+		getContentPane().add(lblNewLabel_1);
+		
+				JTextPane Descricao = new JTextPane();
+				Descricao.setEditable(false);
+				Descricao.setText("O \u00DAnico objetivo em Rust \u00E9 sobreviver. Para fazer isso, voc\u00EA precisar\u00E1 superar lutas como fome, "
+									  + "sede e frio. Construa um fogo. Construa um abrigo. Mate animais por carne. Proteja-se dos outros jogadores e mate-os por"
+									  + " carne. Crie alian\u00E7as com outros jogadores e forme uma cidade. Fa\u00E7a o que for preciso para sobreviver.");
+				Descricao.setFont(new Font("Consolas", Font.PLAIN, 16));
+				Descricao.setOpaque(false);
+				Descricao.setBounds(12, 200, 402, 215);
+				getContentPane().add(Descricao);
+		
+		JLabel lblDias = new JLabel("40 DIAS POR");
+		lblDias.setForeground(new Color(255, 51, 51));
+		lblDias.setFont(new Font("Consolas", Font.BOLD, 16));
+		lblDias.setBounds(497, 208, 105, 16);
+		getContentPane().add(lblDias);
+		
+		JLabel lblWallPaper = new JLabel("");
+		lblWallPaper.setIcon(new ImageIcon("Catalogo\\back_rust.jpg"));
+		lblWallPaper.setBounds(-8, 0, 822, 501);
+		getContentPane().add(lblWallPaper);
+		
+		
+	}
+
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					viewGameRust frame = new viewGameRust();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();}}});
+	}
+}
