@@ -110,18 +110,9 @@ public class viewVenda extends JFrame {
 	public void vendaItem() {
 		
 		VendaModel venda = new VendaModel();
-		
-		Date data = new Date();
-		
-		SimpleDateFormat formatarData = new SimpleDateFormat("dd/MM/y");
-		SimpleDateFormat formatarHora = new SimpleDateFormat(" hh:m:s");
-		
-		String dataform = formatarData.format(data);
-		String horaform = formatarHora.format(data);
 
 		venda.setDescricao("Rust The Survivel Game");
-		venda.setData(dataform);
-		venda.setHora(horaform);
+		
 		
 		VendaControl.getInstancia().cadastrarVenda(venda);
 		

@@ -10,11 +10,10 @@ public class VendaModel {
 	//CONSTRUTOR VAZIO PARA INSTANCIA
 	public VendaModel() {}
 	
-	public VendaModel(int numero, String data, String hora, String descricao) {
+	public VendaModel(int numero, String data, String descricao) {
 		
 		this.numero = numero;
 		this.data = data;
-		this.hora = hora;
 		this.descricao = descricao;
 	}
 
@@ -52,7 +51,7 @@ public class VendaModel {
 	
 	@Override
 	public String toString() {
-		return "VendaModel [data=" + data + ", hora=" + hora + "descricao=" + descricao + "]";
+		return "VendaModel [data=" + data +  " descricao=" + descricao + "]";
 	}
 	
 	

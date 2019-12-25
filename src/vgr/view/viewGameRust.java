@@ -91,7 +91,7 @@ public class viewGameRust extends JFrame {
 		getContentPane().add(lblDesen);
 		
 		JLabel lblNewLabel_1 = new JLabel("");
-		lblNewLabel_1.setIcon(new ImageIcon("C:\\Users\\DamoneW\\Desktop\\Projeto POO - J\u00F3bia Damone\\Anexos\\Capas_Games\\Rust_logo.png"));
+		lblNewLabel_1.setIcon(new ImageIcon("Catalogo\\Rust_logo.png"));
 		lblNewLabel_1.setRequestFocusEnabled(false);
 		lblNewLabel_1.setBounds(12, 31, 384, 94);
 		getContentPane().add(lblNewLabel_1);

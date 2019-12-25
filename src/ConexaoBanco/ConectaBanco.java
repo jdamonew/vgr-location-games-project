@@ -19,7 +19,7 @@ public class ConectaBanco {
 		String meubanco = "XE";
 		String url = "jdbc:oracle:thin:@" + serverName + "/" + meubanco;
 		String user = "VGR";
-		String password = "VGR";
+		String password = "vgr";
 
 		
 

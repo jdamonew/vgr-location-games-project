@@ -54,13 +54,11 @@ public class VendasRepositorio implements iVendasRepositorio {
 	public void cadastrarVenda(VendaModel v) {
 		try {
 
-			String INsql = "INSERT INTO VENDA (DATA_COMPRA, HORA, DESCRICAO) VALUES (?,?,?)";
+			String INsql = "INSERT INTO VENDA (NUMERO, DATA_HORA, DESCRICAO) VALUES ((SELECT MAX(NUMERO) + 1 FROM VENDA),sysdate,?)";
 
 			pstms = ConectaBanco.obterConexao().prepareStatement(INsql);
 
-			pstms.setString(1, v.getData());
-			pstms.setString(2, v.getHora());
-			pstms.setString(3, v.getDescricao());
+			pstms.setString(1, v.getDescricao());
 			
 		
 
@@ -109,7 +107,7 @@ public class VendasRepositorio implements iVendasRepositorio {
 
 			listVendaModel = new ArrayList<VendaModel>();
 
-			String sql = "SELECT * FROM VENDA";
+			String sql = "SELECT * FROM VENDA ORDER BY NUMERO";
 			stms = ConectaBanco.obterConexao().createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,
 					ResultSet.CONCUR_UPDATABLE);
 			rs = stms.executeQuery(sql);
@@ -121,8 +119,7 @@ public class VendasRepositorio implements iVendasRepositorio {
 				VendaModel venda = new VendaModel();
 				
 				venda.setNumero(rs.getInt("NUMERO"));
-				venda.setData(rs.getString("DATA_COMPRA"));
-				venda.setHora(rs.getString("HORA"));
+				venda.setData(rs.getString("DATA_HORA"));
 				venda.setDescricao(rs.getString("DESCRICAO"));
 				
 				

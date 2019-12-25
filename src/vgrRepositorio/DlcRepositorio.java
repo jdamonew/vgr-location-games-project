@@ -116,7 +116,7 @@ public class DlcRepositorio implements iDlcRepositorio {
 
 			listDlcModel = new ArrayList<DlcModel>();
 
-			String sql = "SELECT DLC.CODIGO, DLC.SUB_TITULO, DLC.PRECO, GAME.CODIGO, GAME.TITULO FROM DLC, GAME 9WHERE DLC.COD_GAME = GAME.CODIGO";
+			String sql = "SELECT DLC.CODIGO as COD_DLC, DLC.SUB_TITULO, DLC.PRECO, GAME.CODIGO AS COD_GAME, GAME.TITULO FROM DLC INNER JOIN GAME ON GAME.CODIGO = DLC.COD_GAME";
 			stms = ConectaBanco.obterConexao().createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,
 					ResultSet.CONCUR_UPDATABLE);
 			rs = stms.executeQuery(sql);
@@ -126,11 +126,11 @@ public class DlcRepositorio implements iDlcRepositorio {
 			do {
 
 				DlcModel dlc = new DlcModel();
-				dlc.setCodd(rs.getInt("DLC.CODIGO"));
-				dlc.setSub_titulo(rs.getString("DLC.SUB_TITULO"));
-				dlc.setPrecoDlc(rs.getInt("DLC.PRECO"));
-				dlc.setCod(rs.getInt("GAME.CODIGO"));
-				dlc.setTitulo(rs.getString("GAME.TITULO"));
+				dlc.setCodd(rs.getInt("COD_DLC"));
+				dlc.setSub_titulo(rs.getString("SUB_TITULO"));
+				dlc.setPrecoDlc(rs.getInt("PRECO"));
+				dlc.setCod(rs.getInt("COD_GAME"));
+				dlc.setTitulo(rs.getString("TITULO"));
 				
 				listDlcModel.add(dlc);
 
