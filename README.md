@@ -1,2 +1,2 @@
-# vgr_location_games_project
+# VGR - Location Games Project
 Locadora virtual de games - projeto faculdade 
